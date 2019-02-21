@@ -4,7 +4,6 @@ export default
 
 `type CategoryOption {
     id: ID!
-    categoryId: Int!
     category: Category!
     name: String!
 }
