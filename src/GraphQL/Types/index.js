@@ -2,9 +2,11 @@
 
 import { mergeTypes } from 'merge-graphql-schemas';
 import UserType from './UserSchema';
+import CategoryType from './CategorySchema';
 
 const types = [
     UserType,
+    CategoryType,
 ];
 
 // NOTE: 2nd param is optional, and defaults to false
