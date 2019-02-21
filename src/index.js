@@ -1,32 +1,28 @@
 import cors from 'cors';
 import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
+import typeDefs from './graphql';
 
 const app = express();
 app.use(cors());
-
-const schema = gql`
-  type Query {
-    me: User
-  }
-
-  type User {
-    username: String!
-  }
-`;
 
 const resolvers = {
     Query: {
         me() {
             return {
-                username: 'Robin Wieruch',
+                id: 12,
+                firstName: "ale",
+                lastName: "ale",
+                email: "email",
+                birthday: "birthday",
+                sex: "M",
             };
         },
     },
 };
 
 const server = new ApolloServer({
-    typeDefs: schema,
+    typeDefs,
     resolvers,
 });
 
