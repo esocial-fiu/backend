@@ -9,6 +9,7 @@ export default
     email: String!
     birthday: String!
     sex: String!
+    categoryOptions: [CategoryOption]!
 }
 
 type Query {
