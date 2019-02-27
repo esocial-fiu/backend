@@ -1,22 +1,23 @@
 require('dotenv').config();
 
 const fs = require('fs');
+console.log(process.env);
 
 module.exports = {
-  development: {
-    "username": "homestead",
-    "password": "secret",
-    "database": "esocial",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
   // development: {
-  //   username: process.env.DB_USERNAME,
-  //   password: process.env.DB_PASSWORD,
-  //   database: process.env.DB_DATABASE,
-  //   host: process.env.DB_HOST,
-  //   dialect: 'mysql',
+  //   "username": "homestead",
+  //   "password": "secret",
+  //   "database": "esocial",
+  //   "host": "127.0.0.1",
+  //   "dialect": "mysql"
   // },
+  development: {
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    host: process.env.DB_HOST,
+    dialect: 'mysql',
+  },
   test: {
     username: 'database_test',
     password: null,
