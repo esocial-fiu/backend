@@ -3,8 +3,8 @@ require('dotenv').config();
 import cors from 'cors';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import typeDefs from './GraphQL/Types';
-import resolvers from "./GraphQL/Resolvers";
+import typeDefs from './graphql/types';
+import resolvers from "./graphql/resolvers";
 
 const app = express();
 app.use(cors());

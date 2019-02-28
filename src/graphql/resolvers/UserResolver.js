@@ -1,6 +1,6 @@
 import _ from "lodash";
-import categoryOptions from "../../Data/categoryOptions";
-import users from "../../Data/users";
+import categoryOptions from "../../data/categoryOptions";
+import users from "../../data/users";
 
 export default {
     Query: {

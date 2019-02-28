@@ -1,6 +1,6 @@
 import _ from "lodash"
-import categories from "./../../Data/categories"
-import categoryOptions from "./../../Data/categoryOptions"
+import categories from "./../../data/categories"
+import categoryOptions from "./../../data/categoryOptions"
 
 export default {
     Query: {
@@ -13,7 +13,7 @@ export default {
     },
     CategoryOption: {
         category(categoryOption) {
-            return _.find(categoryOptions, {id: categoryOption.categoryId});
+            return _.find(categories, {id: categoryOption.categoryId});
         }
     }
 }

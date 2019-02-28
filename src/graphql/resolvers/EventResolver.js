@@ -1,6 +1,6 @@
 import _ from "lodash"
-import events from "./../../Data/events"
-import users from "./../../Data/users"
+import events from "./../../data/events"
+import users from "./../../data/users"
 
 export default {
     Query: {
