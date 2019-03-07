@@ -14,4 +14,10 @@ export default
 
 type Query {
     me: User!
-}`
+}
+
+type Mutation {
+    # Use username: "admin" and password: "admin" to get a valid user
+    login(username: String!, password: String!): User
+}
+`
