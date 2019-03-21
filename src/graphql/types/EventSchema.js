@@ -19,6 +19,19 @@ type Query {
 }
 
 type Mutation {
+    cancelEvent(id: ID!): Event
+
+    createEvent(
+        title: String!
+        description: String!
+        location: String!
+        date: String!
+        createdBy: ID!
+        maxAmountOfPeople: Int!
+    ): Event!
+
     eventRSVP(userId: ID!, eventId: ID!): Event!
+
+    eventUnRSVP(userId: ID!, eventId: ID!): Event!
 }
 `

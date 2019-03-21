@@ -13,11 +13,22 @@ export default
 }
 
 type Query {
-    me: User!
+    me: User!,
+    user(id: ID!): User,
+    users: [User]!
 }
 
 type Mutation {
     # Use username: "admin" and password: "admin" to get a valid user
     userLogin(username: String!, password: String!): User
+    
+    userRegister(
+        firstName: String!
+        lastName: String!
+        email: String!
+        birthday: String!
+        sex: String!
+        categoryOptions: [ID!]
+    ): User
 }
 `
