@@ -16,4 +16,9 @@ export default
 type Query {
     event(id: ID!): Event,
     events: [Event]!,
-}`
+}
+
+type Mutation {
+    eventRSVP(userId: ID!, eventId: ID!): Event!
+}
+`

@@ -9,7 +9,7 @@ export default {
         },
     },
     Mutation: {
-        login(obj, args, context, info) {
+        userLogin(obj, args, context, info) {
             if(args.username !== "admin" || args.password !== "admin")
                 return null;
 

@@ -18,6 +18,6 @@ type Query {
 
 type Mutation {
     # Use username: "admin" and password: "admin" to get a valid user
-    login(username: String!, password: String!): User
+    userLogin(username: String!, password: String!): User
 }
 `

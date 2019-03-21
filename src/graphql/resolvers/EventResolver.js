@@ -11,6 +11,23 @@ export default {
             return events;
         },
     },
+    Mutation: {
+        eventRSVP(obj, args, context, info) {
+            const user = _.find(users, {id: Number(args.userId)});
+
+            if(!user)
+                throw new Error("Invalid user provided.");
+
+            const event = _.find(events, {id: Number(args.eventId)});
+
+            if(!event)
+                throw new Error("Invalid event provided.");
+
+            event.attendees.push(user.id);
+
+            return event;
+        }
+    },
     Event: {
         createdBy(event) {
             return _.find(users, {id: event.createdBy});
