@@ -1,8 +1,10 @@
+'use strict';
 require('dotenv').config();
 
-import { ApolloServer } from 'apollo-server-lambda';
-import typeDefs from './graphql/types';
-import resolvers from "./graphql/resolvers";
+import { ApolloServer } from 'apollo-server-express';
+import typeDefs from './schemas';
+import resolvers from "./resolvers";
+import db from '../models';
 
 const server = new ApolloServer({
     typeDefs,
@@ -12,6 +14,7 @@ const server = new ApolloServer({
         functionName: context.functionName,
         event,
         context,
+        db
     }),
 });
 
