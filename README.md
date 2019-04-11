@@ -1,6 +1,6 @@
 # eSocial Application Backend
 
-##### Before npm install, please do the following :
+##### Before npm start, please do the following :
 
 1.  Create new file name **.env** (In the backend folder).
 
