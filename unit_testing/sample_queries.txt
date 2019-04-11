@@ -1,0 +1,289 @@
+***********************
+query{
+  users{
+   id
+   firstName
+   lastName
+   email
+   birthday
+   sex
+   password
+ 
+    
+  }
+}
+**********************
+query{
+  user(id:1){
+   id
+   firstName
+   lastName
+   email
+   birthday
+   sex
+   password
+ 
+    
+  }
+}
+*********************************
+query{
+  user(id:1){
+   id
+   firstName
+   lastName
+   email
+   birthday
+   sex
+   password
+    categoryOptions{
+      id
+      
+      name
+    }
+ 
+    
+  }
+}
+********************
+query{
+  user(id:1)
+  {
+   	id
+   	firstName
+   	lastName
+   	email
+   	birthday
+   	sex
+   	password
+  	categoryOptions
+    {
+      category{
+        name
+      }
+    	name
+      
+  	}
+   
+  }   
+}
+
+************************
+query{
+  userOptions(userId:1)
+  {
+   	category{
+      name
+    }
+    name
+    
+   
+  }   
+}
+******************
+mutation{
+  userLogin(username:"email1@example.com",password:"111")
+  {
+   
+    firstName
+    lastName
+   
+  }   
+}
+
+**************************
+mutation{
+  userRegister(userId:3,categoryOptionId:1){
+   id
+   firstName
+   lastName
+   email
+   birthday
+   sex
+   password
+ 
+    
+  }
+}
+**************************
+query{
+  category(id:2){
+   id
+   name
+    categoryOptions{
+      name
+    }
+  
+    
+  }
+}
+****************************
+query{
+  categories{
+  
+   name
+    categoryOptions{
+      name
+    }
+    
+    
+  }
+}
+**********************************
+query{
+   categoryOption(id: 1){
+  	 id
+     name
+    category{
+      name
+    }
+    
+    
+  }
+}
+*************************************
+query{
+   categoryOptions(categoryId: 1){
+  	 id
+     name
+    category{
+      name
+    }
+    
+    
+    
+  }
+}
+*******************************
+mutation{
+   userUpdate(userId:1, oldOptionId:3, newOptionId:2){
+  	 id
+   firstName
+   lastName
+   email
+   birthday
+   sex
+   password
+    categoryOptions{
+      id
+      
+      name
+    }
+  }
+}
+
+*********
+query {
+        me{
+          id,
+          firstName,
+          lastName,
+          email,
+          birthday,
+          sex,
+          categoryOptions {
+            name
+          }
+          }
+        }
+**************
+query{
+  event(id:1){
+    id
+    title
+    location
+    maxAmountOfPeople
+    date
+    attendees{
+      firstName
+      lastName
+    }
+    createdBy{
+    	 firstName
+       lastName
+    }
+    description
+    
+  }
+}
+****************
+query{
+  events{
+    id
+    title
+    location
+    maxAmountOfPeople
+    date
+    attendees{
+      firstName
+      lastName
+    }
+    createdBy{
+    	 firstName
+       lastName
+    }
+    description
+    
+  }
+}
+***************
+mutation{
+  cancelEvent(id:5){
+    id
+    title
+    location
+  }
+}
+*****************
+mutation{
+  createEvent(
+     title: "Sport Event",
+              description: "Brazil vs Argentina",
+                 location: "FIU BBC",
+                     date: "05/01/2019",
+                createdBy: 3,
+        maxAmountOfPeople: 10
+  ){
+      id
+    title
+  }
+}
+
+*************
+mutation{
+   eventRSVP(userId:3,eventId:1){
+    id
+    title
+    location
+    maxAmountOfPeople
+    date
+    attendees{
+      firstName
+      lastName
+    }
+    createdBy{
+    	 firstName
+       lastName
+    }
+    description
+  }
+}
+****************
+mutation{
+   eventUnRSVP(userId:3,eventId:1){
+    id
+    title
+    location
+    maxAmountOfPeople
+    date
+    attendees{
+      firstName
+      lastName
+    }
+    createdBy{
+    	 firstName
+       lastName
+    }
+    description
+  }
+}
